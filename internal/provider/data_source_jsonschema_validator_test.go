@@ -1,20 +1,10 @@
-package jsonschema
+package provider
 
 import (
 	"fmt"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
-	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"testing"
 )
-
-var testAccProviderFactories = map[string]func() (*schema.Provider, error){
-	"jsonschema": func() (*schema.Provider, error) {
-		return Provider(), nil
-	}}
-
-func testAccPreCheck(t *testing.T) {
-	return
-}
 
 func Test_dataSourceJsonschemaValidatorRead(t *testing.T) {
 	var cases = []struct {
@@ -31,7 +21,7 @@ func Test_dataSourceJsonschemaValidatorRead(t *testing.T) {
 		t.Run(fmt.Sprintf("%s with error expected %t", tt.document, tt.errorExpected), func(t *testing.T) {
 			resource.Test(t, resource.TestCase{
 				PreCheck:          func() { testAccPreCheck(t) },
-				ProviderFactories: testAccProviderFactories,
+				ProviderFactories: providerFactories,
 				Steps: []resource.TestStep{
 					{
 						Config: makeDataSource(tt.document, tt.schema),

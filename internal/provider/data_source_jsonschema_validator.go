@@ -1,4 +1,4 @@
-package jsonschema
+package provider
 
 import (
 	"crypto/sha256"
