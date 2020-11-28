@@ -10,7 +10,7 @@ terraform-provider-jsonschema
 Abstract
 ========
 
-A |terraform|_ provider for validating yaml or json files using |json-schema|_.
+A |terraform|_ provider for validating json files using |json-schema|_.
 
 
 .. |terraform| replace:: Terraform
