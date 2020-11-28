@@ -1,4 +1,4 @@
-# jsonschema_validator
+# jsonschema_validator Data Source
 
 The `jsonschema_validator` data source validates a json document using [json-schema](https://json-schema.org/).
 
@@ -13,13 +13,13 @@ data "jsonschema_validator" "values" {
 
 ## Argument Reference
 
-The following arguments are supported:
+List arguments this data source takes:
 
 * `document` &mdash; (Required) Content of a json document.
 * `schema` &mdash; (Required) Content of a [json-schema](https://json-schema.org/) file.
 
 ## Attributes Reference
 
-The following attribute are exported:
+List attributes that this data source exports:
 
 * `validated` &mdash; equivalent to `document` argument.
